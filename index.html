@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -44,10 +45,9 @@
             <a class="nav-link" href="#">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Staff</a>
-          </li>
+            <a class="nav-link" href="#staffSection">Staff</a>          </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#Contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -159,7 +159,7 @@
       
 
       <h2>Book an Appointment</h2>
-      <form>
+      <form id="bookingForm">
         <div class="form-group">
           <label for="nameInput">Name</label>
           <input
@@ -217,11 +217,72 @@
               </select>
             </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="submitBooking" type="submit" class="btn btn-success"> <i class="fas fa-check"></i> check Submission</button>
+
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-credit-card"></i>
+          Pay for booking
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="cardName">Name on Card</label>
+                    <input type="text" class="form-control" id="cardName" placeholder="Full name as displayed on card">
+                  </div>
+                  <div class="form-group">
+                    <label for="cardNumber">Credit Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber" placeholder="Valid card number">
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      <label for="cardExpiration">Expiration Date</label>
+                      <input type="text" class="form-control" id="cardExpiration" placeholder="MM/YYYY">
+                    </div>
+                    <div class="col">
+                      <label for="cardCVV">CVV</label>
+                      <input type="text" class="form-control" id="cardCVV" placeholder="CVV">
+                    </div>
+
+                    
+                  </div>
+
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitPayment">Submit Payment</button>
+                  </div>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        
       </form>
     </div>
-    <div class="container mt-5">
-      <h1>Meet Our Staff</h1>
+
+
+
+
+
+
+    <div class="container mt-5" id="staffSection">
+      <h2 class="text-center">Meet Our Staff <i class="fas fa-users"></i></h2>
     </div>
     <div class="container mt-5">
         <div class="row">
@@ -240,11 +301,15 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-      <script>
-        $(document).ready(function(){
-          $('[data-toggle="tooltip"]').tooltip(); 
-        });
-      </script>
+ 
+  
+
+
+
+
+
+
+        
       
       </div>
     </div>
@@ -256,7 +321,7 @@
   </body>
 
   <div class="container mt-5">
-    <h2 class="text-center">TESTIMONIALS</h2>
+    <h2 class="text-center">Testimonials <i class="fas fa-quote-right"></i></h2>
     <div class="row">
       <div class="col-md-4">
         <div class="card">
@@ -288,8 +353,8 @@
   </div>
 
 
-  <div class="container mt-5 mb-5">
-    <h2 class="text-center mb-4">Visit & Contact Us</h2>
+  <div class="container mt-5 mb-5" id="Contact">
+    <h2 class="text-center">Contact Us <i class="fas fa-envelope"></i></h2>
     <div class="card-deck">
         <div class="card">
             <div class="card-body">
@@ -313,6 +378,22 @@
         </div>
     </div>
 </div>
+
+<div class="container mt-5" id="paymentFormSection" style="display: none;">
+  <h2>Payment Information</h2>
+  <form>
+
+   
+    </div>
+  </div>
+</div>
+
+
+      
+    </div>
+  </div>
+</div>
+
 
 
   
