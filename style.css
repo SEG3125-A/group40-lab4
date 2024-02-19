@@ -122,3 +122,23 @@ h2.text-center {
   margin-bottom: 40px;
   font-weight: bold;
 }
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="date"]:hover,
+input[type="time"]:hover,
+select:hover {
+  background-color: #f0f0f0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus {
+  border-color: #007bff;
+  background-color: #efe9ed;
+  transform: scale(1.05);
+  transition: transform 0.25s ease-in-out, background-color 0.25s ease-in-out,
+    border-color 0.25s ease-in-out;
+}
